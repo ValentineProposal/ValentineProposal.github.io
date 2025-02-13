@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Do It!</title>
+</head>
+<body>
+    <div id="container">
+        <!-- Display Let's Do It GIF -->
+        <div>
+           <center><img src="assets/letsDoIt.gif" alt="Let's Do It" width="320" /></center> 
+        </div>
+        <!-- Display the selected date message -->
+        <center><h2 id="message">Let's go on a date!</h2></center>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getURLParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the selected date from the URL parameter
+        const selectedDate = getURLParameter('date');
+        
+        // Map the selected date to a message
+        let message = '';
+
+        switch (selectedDate) {
+            case 'romantic-dinner':
+                message = "Let's go for a Romantic Dinner Date!";
+                break;
+            case 'crazy-party':
+                message = "Let's go for a Crazy Party Date!";
+                break;
+            case 'cozy-movie':
+                message = "Let's go for a Cozy Movie Date!";
+                break;
+            default:
+                message = "Choose a date option!";
+                break;
+        }
+
+        // Update the message on the page
+        document.getElementById('message').textContent = message;
+    </script>
+</body>
+</html>
