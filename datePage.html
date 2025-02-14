@@ -47,4 +47,29 @@
         document.getElementById('message').textContent = message;
     </script>
 </body>
+
+<title>Sticker Forwarder</title>
+    <script>
+        function generateLink() {
+            // URL encode the response page link
+            const responsePage = encodeURIComponent(window.location.href);
+            
+            // Create the forwarding link with a message
+            const forwardLink = `https://wa.me/?text=Here%27s%20my%20response:%20${responsePage}`;
+            
+            // Display the link or redirect user
+            document.getElementById("forwardLink").href = forwardLink;
+            document.getElementById("forwardLink").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <center><p>Click the button below to send your response</p></center>
+        <center><button onclick="generateLink()">Generate Forward Link</button></center>
+        <br /><br />
+        <center><a id="forwardLink" href="#" style="display:none;" target="_blank">Click here to forward!</a></center>
+    </div>
+    <footer style="position: fixed; bottom: 10px; right: 10px; font-size: 12px;">Created by: Manvi Rankawat</footer>
+</body>
 </html>
